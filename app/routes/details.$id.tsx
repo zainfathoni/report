@@ -1,6 +1,7 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { json, useLoaderData } from "@remix-run/react";
 import Description from "~/components/description";
+import { exams } from "~/model/exams";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   // Dummy data for demonstration
@@ -17,10 +18,13 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     portfolio: "http://example.com/portfolio",
   };
 
-  return json(data);
+  const exam = exams.find((exam) => exam.id === params.id);
+
+  return json(exam);
 };
 
 export default function ReportDetails() {
+  console.debug(exams);
   const data = useLoaderData<typeof loader>();
 
   return (
