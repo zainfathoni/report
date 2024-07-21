@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-bg {
+  background: #FFF6D5;
+}
+
+.custom-header {
+  background: #FFA726;
+}
