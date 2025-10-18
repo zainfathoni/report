@@ -12,7 +12,7 @@ import { getKebabCase, isAllEmptyString, toSecond } from "../utils/string";
  * FIXME: Somehow the `node fetch` script doesn't work
  */
 export async function fetchDatabase() {
-  const source = await fetch("https://zainf.dev/zavi-homeschooling-db");
+  const source = await fetch("https://zainf.dev/exam-evaluation-db");
   const $ = load(await source.text());
 
   const colMap: Record<string, string> = {};
